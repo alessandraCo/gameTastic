@@ -1,0 +1,69 @@
+html body {
+  margin: 0;
+  padding: 0;
+  background-color: #C9E9E8;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
+.form-container .form-elements {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 10px #aaaaaa;
+  width: 15rem;
+  height: 12rem;
+  gap: 0.5rem;
+}
+.form-container label,
+.form-container input {
+  border-radius: 0.5rem;
+  border-width: 0.01rem;
+}
+.form-container .text-input {
+  height: 1.2rem;
+}
+.form-container .text-input:hover {
+  border: solid #006B9B 0.01rem;
+  background-color: #E5F3F0;
+}
+.form-container .form-button {
+  background-color: #E5F3F0;
+  width: 5rem;
+  height: 1.5rem;
+}
+.form-container .form-button:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+.form-container #login-form {
+  background-color: orange;
+}
+.form-container #register-form {
+  background-color: #E5F3F0;
+  align-items: start;
+  gap: 1rem;
+  padding-left: 1.5rem;
+  width: 20rem;
+  height: 15rem;
+}
+.form-container #register-form p {
+  margin: 0;
+}
+.form-container #register-form .form-button {
+  align-self: center;
+}
+
+#errorMsg {
+  color: darkred;
+  text-align: center;
+}
+
+/*# sourceMappingURL=auth.css.map */

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/ico.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/auth.css" />
+    <title>Gametastic</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="title">
+          <a href="index.html"
+            ><img id="logoImg" src="./assets/ico.svg" alt="logo image"
+          /></a>
+          <p>GameTastic!</p>
+        </div>
+    </header>
+    <main>
+      <br><br>
+      <p id="errorMsg"></p>
+      <p id="successMsg"></p>
+      <br><br>
+      <form action="" class="form-container" >
+        <div class="form-elements" id="login-form">
+          <label for="username">Username</label>
+          <input class="text-input" type="text" name="username" id="username" required/>
+          <label for="password">Password</label>
+          <input class="text-input" type="password" name="password" id="password" required/>
+          <input type="submit" name="login" id="loginButton" class="form-button" value="login">
+        </div>
+      </form>
+      <br>
+      <form action="" class="form-container" >
+        <div class="form-elements" id="register-form">
+          <label for="usernameIn">Username: <input class="text-input" type="text" name="username" id="usernameIn" required/></label>
+          <label for="passwordIn">Password: <input class="text-input" type="password" name="password" id="passwordIn" required/></label> 
+          <label for="email">Email: <input class="text-input" type="text" name="email" id="email" required/></label>
+          <label for="newsletter">Do you want to subscribe to newsletter? <input type="checkbox" name="newsletter" id="newsletter"/></label>
+          <p>Are you new? Register in!</p>
+          <input type="submit" name="register" id="registerButton" class="form-button" value="register">
+        </div>
+      </form>
+
+    </main>
+    <script src="./build/authenticate.js"></script>
+  </body>
+</html>

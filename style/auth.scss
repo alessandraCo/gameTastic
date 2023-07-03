@@ -1,0 +1,72 @@
+@import "variables";
+
+html body {
+  margin: 0;
+  padding: 0;
+  background-color: $background-color-primary;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  .form-elements {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 10px #aaaaaa;
+    width: 15rem;
+    height: 12rem;
+    gap: 0.5rem;
+  }
+  label,
+  input {
+    border-radius: 0.5rem;
+    border-width: 0.01rem;
+  }
+  .text-input {
+    height: 1.2rem;
+    &:hover {
+      border: solid $secondary-color 0.01rem;
+      background-color: $third-color;
+    }
+  }
+  .form-button {
+    background-color: $third-color;
+    width: 5rem;
+    height: 1.5rem;
+    &:hover {
+      cursor: pointer;
+      scale: 1.1;
+    }
+  }
+
+  #login-form {
+    background-color: orange;
+  }
+
+  #register-form {
+    //position: absolute;
+    background-color: $third-color;
+    align-items: start;
+    gap: 1rem;
+    padding-left: 1.5rem;
+    width: 20rem;
+    height: 15rem;
+    p {
+        margin: 0;
+    }
+    .form-button {
+        align-self: center;
+    }
+  }
+}
+
+#errorMsg {
+  color: darkred;
+  text-align: center;
+}
