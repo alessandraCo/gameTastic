@@ -104,6 +104,18 @@ loginButton?.addEventListener("click", (e) => {
       .then(responseOK, responseKO);
 
     function responseOK(data: any) {
+      //HTML manager:
+      //success message
+      const msg = document.getElementById("successMsg");
+      if (msg !== null && msg != undefined) {
+        msg.innerText = "";
+      }
+      //error message
+      const errorMsg = document.getElementById("errorMsg");
+      if (errorMsg !== null && errorMsg != undefined) {
+        errorMsg.innerText = "";
+      }
+
       //username present in db
       if (data.length !== 0) {
         let getId, getUser, getPass, getEmail, getSub, getAdmin;
@@ -120,18 +132,15 @@ loginButton?.addEventListener("click", (e) => {
         if (user !== undefined) {
           //check password
           if (user.getPassword() === inputPassword) {
-            const msg = document.getElementById("successMsg");
             if (msg !== null && msg != undefined) {
               msg.innerText = "Welcome! You logged in!"; //passwordOK
             }
           } else {
-            const errorMsg = document.getElementById("errorMsg");
             if (errorMsg !== null && errorMsg != undefined) {
               errorMsg.innerText = "Incorrect username or password"; //passwordKO
             }
           }
         } else {
-          const errorMsg = document.getElementById("errorMsg");
           if (errorMsg !== null && errorMsg != undefined) {
             errorMsg.innerText = "User not present";
             return;
@@ -141,6 +150,9 @@ loginButton?.addEventListener("click", (e) => {
       //username not present in db
       else {
         console.log("User NOT found");
+        if (errorMsg !== null && errorMsg != undefined) {
+          errorMsg.innerText = "User not present";
+        }
         return undefined;
       }
     }

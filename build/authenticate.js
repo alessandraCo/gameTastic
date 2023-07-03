@@ -72,6 +72,17 @@ loginButton === null || loginButton === void 0 ? void 0 : loginButton.addEventLi
             .then((response) => response.json())
             .then(responseOK, responseKO);
         function responseOK(data) {
+            //HTML manager:
+            //success message
+            const msg = document.getElementById("successMsg");
+            if (msg !== null && msg != undefined) {
+                msg.innerText = "";
+            }
+            //error message
+            const errorMsg = document.getElementById("errorMsg");
+            if (errorMsg !== null && errorMsg != undefined) {
+                errorMsg.innerText = "";
+            }
             //username present in db
             if (data.length !== 0) {
                 let getId, getUser, getPass, getEmail, getSub, getAdmin;
@@ -88,20 +99,17 @@ loginButton === null || loginButton === void 0 ? void 0 : loginButton.addEventLi
                 if (user !== undefined) {
                     //check password
                     if (user.getPassword() === inputPassword) {
-                        const msg = document.getElementById("successMsg");
                         if (msg !== null && msg != undefined) {
                             msg.innerText = "Welcome! You logged in!"; //passwordOK
                         }
                     }
                     else {
-                        const errorMsg = document.getElementById("errorMsg");
                         if (errorMsg !== null && errorMsg != undefined) {
                             errorMsg.innerText = "Incorrect username or password"; //passwordKO
                         }
                     }
                 }
                 else {
-                    const errorMsg = document.getElementById("errorMsg");
                     if (errorMsg !== null && errorMsg != undefined) {
                         errorMsg.innerText = "User not present";
                         return;
@@ -111,6 +119,9 @@ loginButton === null || loginButton === void 0 ? void 0 : loginButton.addEventLi
             //username not present in db
             else {
                 console.log("User NOT found");
+                if (errorMsg !== null && errorMsg != undefined) {
+                    errorMsg.innerText = "User not present";
+                }
                 return undefined;
             }
         }
