@@ -62,10 +62,6 @@ class User {
     this.password = newPassword;
   }
 
-  public changeEmail(newEmail: string) {
-    this.email = checkMail(newEmail);
-  }
-
   public changeSubscription(newSubscription: boolean) {
     this.subscription = newSubscription;
   }
@@ -171,6 +167,7 @@ registerButton?.addEventListener("click", (e) => {
     msg.innerText = "";
   }
 
+  //retrieving the form fields
   const inputUser: string = (<HTMLInputElement>(
     document.getElementById("usernameIn")
   ))?.value;
@@ -184,17 +181,19 @@ registerButton?.addEventListener("click", (e) => {
     document.getElementById("newsletter")
   ))?.checked;
 
+  //checking user input: not null and not empty 
   if (
     inputUser !== null &&
     inputUser !== "" &&
     inputPassword !== null &&
     inputPassword !== "" &&
     inputEmail !== null &&
-    inputEmail !== ""
+    inputEmail !== "" &&
+    checkMail(inputEmail)    //validate email with regex
   ) {
     const newUser = new User(
       inputUser.trim(),
-      checkMail(inputEmail),
+      inputEmail,
       inputPassword,
       inputNews || false,
       false
@@ -231,7 +230,7 @@ registerButton?.addEventListener("click", (e) => {
 });
 
 //check mail using regex expression
-function checkMail(email: string): string | undefined {
+function checkMail(email: string): boolean {
   //HTML manager
   const msg = document.getElementById("errorMsg");
   if (msg !== undefined && msg !== null) {
@@ -242,15 +241,15 @@ function checkMail(email: string): string | undefined {
     "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$";
   const check = email.match(mailRegex);
   if (check) {
-    return email;
+    return true;
   } else {
     console.log(
-      "This email is not valid and will not be registered. You can modify your email later"
+      "This email is not valid and will not be registered"
     );
     if (msg !== undefined && msg !== null) {
       msg.innerText =
-        "This email is not valid and will not be registered. You can modify your email later";
+        "This email is not valid and will not be registered";
     }
-    return undefined;
+    return false;
   }
 }

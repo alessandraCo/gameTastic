@@ -38,9 +38,6 @@ class User {
     changePassword(newPassword) {
         this.password = newPassword;
     }
-    changeEmail(newEmail) {
-        this.email = checkMail(newEmail);
-    }
     changeSubscription(newSubscription) {
         this.subscription = newSubscription;
     }
@@ -138,17 +135,21 @@ registerButton === null || registerButton === void 0 ? void 0 : registerButton.a
         e.preventDefault();
         msg.innerText = "";
     }
+    //retrieving the form fields
     const inputUser = (_a = ((document.getElementById("usernameIn")))) === null || _a === void 0 ? void 0 : _a.value;
     const inputPassword = (_b = ((document.getElementById("passwordIn")))) === null || _b === void 0 ? void 0 : _b.value;
     const inputEmail = (_c = ((document.getElementById("email")))) === null || _c === void 0 ? void 0 : _c.value;
     const inputNews = (_d = ((document.getElementById("newsletter")))) === null || _d === void 0 ? void 0 : _d.checked;
+    //checking user input: not null and not empty 
     if (inputUser !== null &&
         inputUser !== "" &&
         inputPassword !== null &&
         inputPassword !== "" &&
         inputEmail !== null &&
-        inputEmail !== "") {
-        const newUser = new User(inputUser.trim(), checkMail(inputEmail), inputPassword, inputNews || false, false);
+        inputEmail !== "" &&
+        checkMail(inputEmail) //validate email with regex
+    ) {
+        const newUser = new User(inputUser.trim(), inputEmail, inputPassword, inputNews || false, false);
         const opts = {
             method: "POST",
             headers: {
@@ -185,14 +186,14 @@ function checkMail(email) {
     let mailRegex = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$";
     const check = email.match(mailRegex);
     if (check) {
-        return email;
+        return true;
     }
     else {
-        console.log("This email is not valid and will not be registered. You can modify your email later");
+        console.log("This email is not valid and will not be registered");
         if (msg !== undefined && msg !== null) {
             msg.innerText =
-                "This email is not valid and will not be registered. You can modify your email later";
+                "This email is not valid and will not be registered";
         }
-        return undefined;
+        return false;
     }
 }
