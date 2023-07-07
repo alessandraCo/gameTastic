@@ -1,71 +1,32 @@
 "use strict";
+//imports
+import { User } from "./user.js";
 //authentication using json-server
 const loginButton = document.getElementById("loginButton");
 const registerButton = document.getElementById("registerButton");
-//User
-class User {
-    constructor(username, email, password, subscription, authorization = false) {
-        //this.id = User.idAll;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.subscription = subscription;
-        this.isAdmin = authorization;
-        this.friends = [];
-        //User.idAll++;
-    }
-    // public getId(): number {
-    //   return this.id;
-    // }
-    getUsername() {
-        return this.username;
-    }
-    getEmail() {
-        return this.email;
-    }
-    getPassword() {
-        return this.password;
-    }
-    getSubscription() {
-        return this.subscription;
-    }
-    getIsAdmin() {
-        return this.isAdmin;
-    }
-    changeUsername(newUsername) {
-        this.username = newUsername;
-    }
-    changePassword(newPassword) {
-        this.password = newPassword;
-    }
-    changeSubscription(newSubscription) {
-        this.subscription = newSubscription;
-    }
-    setAdministration(isAdmin) {
-        this.isAdmin = isAdmin;
-    }
-    printUser() {
-        // console.log("| id utente: | " + this.id);
-        console.log("| username:  | " + this.username);
-        console.log("| email:     | " + this.email);
-        this.subscription
-            ? console.log("| newsletter:| yes")
-            : console.log("| newsletter:| no");
-    }
-}
+//Session
+let userLogged = null;
+window.addEventListener("load", () => {
+    sessionStorage.setItem("userLogged", "null");
+    userLogged = null;
+});
+
 //login
 loginButton === null || loginButton === void 0 ? void 0 : loginButton.addEventListener("click", (e) => {
     var _a, _b;
-    e.preventDefault();
+    //e.preventDefault();
     const inputUser = (_a = document.getElementById("username")) === null || _a === void 0 ? void 0 : _a.value;
     const inputPassword = (_b = document.getElementById("password")) === null || _b === void 0 ? void 0 : _b.value;
     if (inputUser != null &&
         inputUser.trim() !== "" &&
         inputPassword != null &&
         inputPassword !== "") {
+        //Session
+        let userLogged = null;
+        sessionStorage.setItem("userLogged", "null");
         e.preventDefault();
         //serching for username in db
-        const loginUser = fetch(`http://localhost:3000/users?username=${inputUser}`)
+        fetch(`http://localhost:3000/users?username=${inputUser}`)
             .then((response) => response.json())
             .then(responseOK, responseKO);
         function responseOK(data) {
@@ -99,11 +60,29 @@ loginButton === null || loginButton === void 0 ? void 0 : loginButton.addEventLi
                         if (msg !== null && msg != undefined) {
                             msg.innerText = "Welcome! You logged in!"; //passwordOK
                         }
+                        userLogged = user.getUsername() + ":";
+                        //generating token for authentication
+                        let token = new Int8Array(5);
+                        self.crypto.getRandomValues(token);
+                        for (let n of token) {
+                            userLogged = userLogged.concat(n.toString());
+                        }
+                        //session
+                        sessionStorage.setItem("userLogged", userLogged); //session: userLogged = username + token
+                        //redirecting to the right secondary menu depending on common user or admin
+                        if (user.getIsAdmin()) {
+                            window.location.replace("/index-admin.html"); //admin
+                        }
+                        else {
+                            window.location.replace("/index-logged.html"); //common user
+                        }
+                        return;
                     }
                     else {
                         if (errorMsg !== null && errorMsg != undefined) {
                             errorMsg.innerText = "Incorrect username or password"; //passwordKO
                         }
+                        return;
                     }
                 }
                 else {
@@ -140,7 +119,7 @@ registerButton === null || registerButton === void 0 ? void 0 : registerButton.a
     const inputPassword = (_b = ((document.getElementById("passwordIn")))) === null || _b === void 0 ? void 0 : _b.value;
     const inputEmail = (_c = ((document.getElementById("email")))) === null || _c === void 0 ? void 0 : _c.value;
     const inputNews = (_d = ((document.getElementById("newsletter")))) === null || _d === void 0 ? void 0 : _d.checked;
-    //checking user input: not null and not empty 
+    //checking user input: not null and not empty
     if (inputUser !== null &&
         inputUser !== "" &&
         inputPassword !== null &&
@@ -191,8 +170,7 @@ function checkMail(email) {
     else {
         console.log("This email is not valid and will not be registered");
         if (msg !== undefined && msg !== null) {
-            msg.innerText =
-                "This email is not valid and will not be registered";
+            msg.innerText = "This email is not valid and will not be registered";
         }
         return false;
     }

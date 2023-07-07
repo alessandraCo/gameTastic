@@ -1,0 +1,97 @@
+#first-player img {
+  height: 150px;
+}
+#first-player img:hover {
+  scale: 1.1;
+}
+
+#second-player img {
+  height: 120px;
+}
+#second-player img:hover {
+  scale: 1.1;
+}
+
+#third-player img {
+  height: 85px;
+}
+#third-player img:hover {
+  scale: 1.1;
+}
+
+.img-container {
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.cards-container {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  border: dotted #FCA311 0.2rem;
+  border-radius: 5%;
+  height: 22rem;
+  width: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FF8600;
+}
+.card p {
+  margin: 0;
+  bottom: 2rem;
+}
+
+.table-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  border: solid #006B9B 0.1rem;
+  border-collapse: collapse;
+  border-radius: 5%;
+}
+table th {
+  background-color: #006B9B;
+  color: #ffffff;
+}
+table td, table th {
+  border: 0;
+  height: 2rem;
+  width: 5rem;
+  text-align: center;
+}
+
+.title-table {
+  color: #171A21;
+  text-align: center;
+}
+
+@media only screen and (max-width: 680px) {
+  .card {
+    height: 20rem;
+    width: 10.5rem;
+  }
+}
+@media only screen and (max-width: 584px) {
+  .card {
+    height: 22rem;
+    width: 12.5rem;
+  }
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/*# sourceMappingURL=topPlayer.css.map */

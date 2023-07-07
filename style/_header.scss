@@ -104,7 +104,7 @@ nav {
   display: none;
 }
 
-//Small devices (phones: 600px and down)
+//Small devices (phones: 645px and down)
 @media only screen and (max-width: 645px) {
   nav {
     padding: 0;
@@ -112,6 +112,9 @@ nav {
       display: none;
     }
     .div-button {
+      display: none;
+    }
+    .user-menu {
       display: none;
     }
   }
@@ -122,6 +125,7 @@ nav {
 
   #small-menu-container {
     display: none;
+    position: absolute;
     flex-direction: row;
     justify-content: flex-end;
     width: 100%;

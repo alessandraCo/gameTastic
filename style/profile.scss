@@ -1,0 +1,22 @@
+.user-info {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    p {
+        margin: 0;
+    }
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    text-align: justify;
+
+    gap: 2rem;
+    img {
+        height: 1rem;
+        width: 1rem;
+    }
+}
+

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="./style/logged.css" />
     <link rel="shortcut icon" href="./assets/ico.svg" type="image/x-icon" />
     <title>Gametastic</title>
   </head>
@@ -19,37 +20,47 @@
         <div class="links">
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="top-player.html">Top Players</a></li>
+            <li><a href="top-player-logged.html">Top Players</a></li>
             <li id="menu">
               <a href="">Games</a>
               <ul class="dropdown">
-                <li><a href="page-not-found.html">Memory</a></li>
-                <li><a href="page-not-found.html">Battleship</a></li>
-                <li><a href="page-not-found.html">Connect 4</a></li>
-                <li><a href="page-not-found.html">Words</a></li>
+                <li><a href="page-not-found-logged.html">Memory</a></li>
+                <li><a href="page-not-found-logged.html">Battleship</a></li>
+                <li><a href="page-not-found-logged.html">Connect 4</a></li>
+                <li><a href="page-not-found-logged.html">Words</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <div class="div-button">
-          <a href="login.html">Login</a>
+        <div class="user-menu">
+          <div class="user-token">
+            <img src="./assets/user.svg" alt="" />
+            <p id="user">Username</p>
+          </div>
+          <div>
+            <ul class="options" id="dropdown-profile">
+              <li><a href="./profile-page.html">Profile</a></li>
+              <li class="div-button"><a id="logout1" href="">Logout</a></li>
+            </ul>
+          </div>
         </div>
         <a href="" id="toggle"><img src="./assets/menu.svg" alt="menu" /></a>
       </nav>
       <div id="small-menu-container">
         <div class="small-menu">
           <li><a href="#">Home</a></li>
-          <li><a href="top-player.html">Top Players</a></li>
+          <li><a href="top-player-logged.html">Top Players</a></li>
           <li id="menu">
             <a href="">Games</a>
             <ul class="dropdown">
-              <li><a href="page-not-found.html">Memory</a></li>
-              <li><a href="page-not-found.html">Battleship</a></li>
-              <li><a href="page-not-found.html">Connect 4</a></li>
-              <li><a href="page-not-found.html">Words</a></li>
+              <li><a href="page-not-found-logged.html">Memory</a></li>
+              <li><a href="page-not-found-logged.html">Battleship</a></li>
+              <li><a href="page-not-found-logged.html">Connect 4</a></li>
+              <li><a href="page-not-found-logged.html">Words</a></li>
             </ul>
           </li>
-          <li class="div-button"><a href="login.html">Login</a></li>
+          <li><a href="./profile-page.html">Profile</a></li>
+          <li class="div-button"><a id="logout2" href="">Logout</a></li>
         </div>
       </div>
     </header>
@@ -74,14 +85,22 @@
             ipsam, vel iusto laudantium minus excepturi doloribus cupiditate
             minima inventore, aperiam quia! Suscipit explicabo inventore ut
             impedit tenetur et magnam ex.
-            <br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius autem eos amet harum, possimus ipsa quisquam laboriosam voluptatem minus dolorum, porro suscipit facilis voluptate dolores earum aperiam tempore atque in.
+            <br />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius
+            autem eos amet harum, possimus ipsa quisquam laboriosam voluptatem
+            minus dolorum, porro suscipit facilis voluptate dolores earum
+            aperiam tempore atque in.
           </p>
         </div>
       </div>
       <div class="container1">
         <div class="text-container">
           <h3>About</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus reprehenderit eveniet esse accusamus excepturi ipsa praesentium sint quae, quia consequuntur quibusdam laborum fuga eum iusto assumenda aliquid sed voluptatum. Pariatur?</p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus
+            reprehenderit eveniet esse accusamus excepturi ipsa praesentium sint
+            quae, quia consequuntur quibusdam laborum fuga eum iusto assumenda
+            aliquid sed voluptatum. Pariatur?
+          </p>
         </div>
         <img src="./assets/about.png" alt="" />
       </div>
@@ -89,13 +108,20 @@
         <img id="join-img" src="./assets/img1.jpg" alt="" />
         <div class="text-container">
           <h3>Join us!</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora earum ratione voluptates beatae excepturi voluptate neque atque tenetur officiis quisquam repellat explicabo similique vero totam, aspernatur magnam numquam consectetur! Aliquam?</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+            earum ratione voluptates beatae excepturi voluptate neque atque
+            tenetur officiis quisquam repellat explicabo similique vero totam,
+            aspernatur magnam numquam consectetur! Aliquam?
+          </p>
         </div>
       </div>
     </main>
     <footer>
       <p>@Gametastic</p>
     </footer>
+    <script src="./build/logout.js"></script>
     <script src="./build/index.js"></script>
+    <script src="./build/loggedUser.js"></script>
   </body>
 </html>

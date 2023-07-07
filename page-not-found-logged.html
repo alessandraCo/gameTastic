@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="./style/error.css">
+    <link rel="stylesheet" href="./style/logged.css">
+    <link rel="shortcut icon" href="./assets/ico.svg" type="image/x-icon" />
+    <title>Gametastic</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="title">
+          <a href="index-logged.html"
+            ><img id="logoImg" src="./assets/ico.svg" alt="logo image"
+          /></a>
+          <p>GameTastic!</p>
+        </div>
+        <div class="links">
+          <ul>
+            <li><a href="index-logged.html">Home</a></li>
+            <li><a href="top-player-logged.html">Top Players</a></li>
+            <li id="menu">
+              <a href="">Games</a>
+              <ul class="dropdown">
+                <li><a href="#">Memory</a></li>
+                <li><a href="#">Battleship</a></li>
+                <li><a href="#">Connect 4</a></li>
+                <li><a href="#">Words</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="user-menu">
+          <div class="user-token">
+            <img src="./assets/user.svg" alt="" />
+            <p id="user">Username</p>
+          </div>
+          <div>
+            <ul class="options" id="dropdown-profile">
+              <li><a href="./profile-page.html">Profile</a></li>
+              <li class="div-button"><a id="logout1" href="">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+        <a href="" id="toggle"><img src="./assets/menu.svg" alt="menu" /></a>
+      </nav>
+      <div id="small-menu-container">
+        <div class="small-menu">
+          <li><a href="index-logged.html">Home</a></li>
+          <li><a href="top-player-logged.html">Top Players</a></li>
+          <li id="menu">
+            <a href="">Games</a>
+            <ul class="dropdown">
+              <li><a href="#">Memory</a></li>
+              <li><a href="#">Battleship</a></li>
+              <li><a href="#">Connect 4</a></li>
+              <li><a href="#">Words</a></li>
+            </ul>
+          </li>
+          <li><a href="./profile-page.html">Profile</a></li>
+          <li class="div-button"><a id="logout2" href="">Logout</a></li>
+        </div>
+      </div>
+    </header>
+    <main>
+      <br />
+      <div class="error">
+        <img src="./assets/about.png" alt="arcade game image" />
+        <h3>This Game will be available soon!</h3>
+      </div>
+      <br />
+    </main>
+    <footer>
+      <p>@Gametastic</p>
+    </footer>
+    <script src="./build/logout.js"></script>
+    <script src="./build/index.js"></script>
+    <script src="./build/loggedUser.js"></script>
+  </body>
+</html>

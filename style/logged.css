@@ -1,0 +1,44 @@
+.user-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-token {
+  display: flex;
+  flex-direction: row;
+  background-color: #171A21;
+  border-radius: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  gap: 1rem;
+}
+.user-token p {
+  margin: 0;
+}
+.user-token p:hover {
+  color: #FF8600;
+  cursor: pointer;
+}
+.user-token img:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.options {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  width: 10rem;
+  height: 5rem;
+  background-color: rgba(23, 26, 33, 0.4509803922);
+  border-radius: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+/*# sourceMappingURL=logged.css.map */
