@@ -1,60 +1,66 @@
 //main: main.scss
 
 #console-img {
-    height: 45rem;
+  height: 45rem;
 }
 
 #join-img {
-    height: 10rem;
-    width: 10rem;
-    border-radius: 100%;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 100%;
 }
 
-// .carousell {
-//     position: absolute;
-//     z-index: -1;
-//     img {
-//         height: 300px;
-//         width: 300px;
-//     }
-// }
-
 .container1 {
-    padding: 2.5rem 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    gap: 5rem;
+  padding: 2.5rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 5rem;
 }
 
 .text-container {
-    width: 20rem;
-    height: auto;
-    p {
-        text-align: justify;
+  width: 20rem;
+  height: auto;
+  p {
+    text-align: justify;
+  }
+}
+
+//carousel
+.carousel {
+    position: absolute;
+    z-index: -1;
+    margin-top: 50px;
+    margin-left: 55px;
+    img {
+        height: 325px;
     }
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
 footer {
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 2rem;
+  background-color: $primary-color;
+  p {
     margin: 0;
-    height: 2rem;
-    background-color: $primary-color;
-    p {
-        margin: 0;
-        color: $font-color-one
-    }
+    color: $font-color-one;
+  }
 }
 
 @media only screen and (max-width: 645px) {
-    .container1 {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
+  .container1 {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 }

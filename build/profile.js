@@ -10,7 +10,7 @@ const close2 = document.getElementById("close-button2");
 //imports
 import { LOGGED } from "./loggedUser.js";
 import { User } from "./user.js";
-// import { sendEmail } from "./email.js";
+import { sendMail } from "./email.js";
 
 //context variable
 let option;
@@ -255,30 +255,50 @@ function sendMessage(friendSelected) {
     if (friendSelected === null || friendSelected.length === 0) {
         return;
     } else {
-        for (let i = 0; i < friendSelected.length; i++) {
-            //getting user email
-            fetch(`http://localhost:3000/users?username=${friendSelected[i]}`)
-                .then((response) => response.json())
-                .then(responseOK, responseKO);
-            function responseOK(data) {
-                if (data.length !== 0) {
-                    let getId, getUser, getEmail;
-                    for (let i = 0; i < data.length; i++) {
-                        getId = data[i].id;
-                        getUser = data[i].username;
-                        getEmail = data[i].email;
+        //getting message
+        const message = document.getElementById("message").value;
+        if (message === null || message === "") {
+            return;
+        } else {
+            for (let i = 0; i < friendSelected.length; i++) {
+                //getting user email
+                fetch(`http://localhost:3000/users?username=${friendSelected[i]}`)
+                    .then((response) => response.json())
+                    .then(responseOK, responseKO);
+                function responseOK(data) {
+                    if (data.length !== 0) {
+                        let getId, getUser, getEmail;
+                        for (let i = 0; i < data.length; i++) {
+                            getId = data[i].id;
+                            getUser = data[i].username;
+                            getEmail = data[i].email;
+                        }
+                        let toFriend = new User();
+                        toFriend.id = getId
+                        toFriend.username = getUser;
+                        toFriend.email = getEmail;
+                        sendMail(LOGGED.username, toFriend.username, LOGGED.email, message);
+                        //reset values:
+                        //reset checkboxes
+                        const checkboxes = document.getElementsByClassName("checkbox");
+                        for(let i=0; i< checkboxes.length; i++) {
+                            checkboxes[i].checked = false;
+                        }
+                        //reset input message
+                        const inputMessage = document.getElementById("message");
+                        inputMessage.value = "";
+
+                        const display = window.getComputedStyle(modalMessage).display;
+                        //close modal window
+                        if (display === "block") {
+                            modalMessage.style.display = "none";
+                        }
+                        return;
                     }
-                    let toFriend = new User();
-                    toFriend.id = getId
-                    toFriend.username = getUser;
-                    toFriend.email = getEmail;
-                    console.log("send message");
-                    sendEmail(LOGGED.email, toFriend.email);
-                    window.location.reload();
                 }
-            }
-            function responseKO(err) {
-                alert(err.message);
+                function responseKO(err) {
+                    alert(err.message);
+                }
             }
         }
     }

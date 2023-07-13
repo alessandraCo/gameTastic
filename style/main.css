@@ -193,6 +193,21 @@ nav .div-button:hover {
   text-align: justify;
 }
 
+.carousel {
+  position: absolute;
+  z-index: -1;
+  margin-top: 50px;
+  margin-left: 55px;
+}
+.carousel img {
+  height: 325px;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
 footer {
   max-width: 100%;
   display: flex;
