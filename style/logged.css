@@ -14,7 +14,10 @@
   gap: 1rem;
 }
 .user-token p {
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: 0;
+  white-space: nowrap;
 }
 .user-token p:hover {
   color: #FF8600;

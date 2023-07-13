@@ -8,6 +8,7 @@ const registerButton = document.getElementById("registerButton");
 let userLogged = null;
 window.addEventListener("load", () => {
     sessionStorage.setItem("userLogged", "null");
+    sessionStorage.setItem("userId", "null");
     userLogged = null;
 });
 
@@ -43,7 +44,7 @@ loginButton === null || loginButton === void 0 ? void 0 : loginButton.addEventLi
             }
             //username present in db
             if (data.length !== 0) {
-                let getId, getUser, getPass, getEmail, getSub, getAdmin;
+                let getId, getUser, getPass, getEmail, getSub, getAdmin, getFriends, getScore;
                 console.log("User found!");
                 for (let i = 0; i < data.length; i++) {
                     getId = data[i].id;
@@ -52,8 +53,12 @@ loginButton === null || loginButton === void 0 ? void 0 : loginButton.addEventLi
                     getEmail = data[i].email;
                     getSub = data[i].subscription;
                     getAdmin = data[i].isAdmin;
+                    getFriends = data[i].friends;
+                    getScore = data[i].score;
                 }
-                const user = new User(getUser, getEmail, getPass, getSub, getAdmin);
+                let user = new User();
+                user = user.getUser(getId, getUser, getEmail, getPass, getSub, getAdmin, getFriends, getScore);
+                console.log(user);
                 if (user !== undefined) {
                     //check password
                     if (user.getPassword() === inputPassword) {
@@ -69,6 +74,7 @@ loginButton === null || loginButton === void 0 ? void 0 : loginButton.addEventLi
                         }
                         //session
                         sessionStorage.setItem("userLogged", userLogged); //session: userLogged = username + token
+                        sessionStorage.setItem("userId", getId); //session: userId 
                         //redirecting to the right secondary menu depending on common user or admin
                         if (user.getIsAdmin()) {
                             window.location.replace("/index-admin.html"); //admin

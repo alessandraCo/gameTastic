@@ -15,7 +15,10 @@
   width: 10rem;
   gap: 1rem;
   p {
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin: 0;
+    white-space: nowrap;
     &:hover {
       color: $font-color-two;
       cursor: pointer;

@@ -2,6 +2,7 @@
 export { User as User };
 //User
 class User {
+    //constructor for creating a new user (registration)
     constructor(username, email, password, subscription, authorization = false) {
         //this.id = User.idAll;
         this.username = username;
@@ -13,9 +14,23 @@ class User {
         this.score = 0;
         //User.idAll++;
     }
-    // public getId(): number {
-    //   return this.id;
-    // }
+    //function for retrieving a user from db (login)
+    getUser(id, username, email, password, subscription, isAdmin, friends, score) {
+        let user = new User();
+        user.setId(id);
+        user.changeUsername(username);
+        user.email = email;
+        user.changePassword(password);
+        user.changeSubscription(subscription);
+        user.setAdministration(isAdmin);
+        user.friends = friends;
+        user.score = score;
+        return user;
+    }
+
+    getId() {
+      return this.id;
+    }
     getUsername() {
         return this.username;
     }
@@ -30,6 +45,9 @@ class User {
     }
     getIsAdmin() {
         return this.isAdmin;
+    }
+    setId(id) {
+        this.id = id;
     }
     changeUsername(newUsername) {
         this.username = newUsername;

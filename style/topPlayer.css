@@ -36,6 +36,7 @@
 
 .card {
   border: dotted #FCA311 0.2rem;
+  background-color: azure;
   border-radius: 5%;
   height: 22rem;
   width: 12.5rem;

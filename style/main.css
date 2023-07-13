@@ -217,7 +217,7 @@ footer p {
 html body {
   margin: 0;
   padding: 0;
-  background-color: #C9E9E8;
+  background-image: url(/assets/background.png);
 }
 
 /*# sourceMappingURL=main.css.map */

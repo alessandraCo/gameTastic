@@ -79,32 +79,108 @@
         <div class="values">
           <div class="buttons">
             <p id="username"></p>
-            <img src="./assets/edit.svg" alt="edit image" />
+            <img id="changeUsername" src="./assets/edit.svg" alt="edit image" />
           </div>
           <div class="buttons">
             <p id="email"></p>
-            <img src="./assets/edit.svg" alt="edit image" />
           </div>
           <div class="buttons">
             <p id="password"></p>
-            <img src="./assets/edit.svg" alt="edit image" />
+            <img id="changePassword" src="./assets/edit.svg" alt="edit image" />
           </div>
           <div class="buttons">
             <p id="news"></p>
-            <img src="./assets/edit.svg" alt="edit image" />
+            <img id="changeSub" src="./assets/edit.svg" alt="edit image" />
           </div>
           <div class="buttons">
             <p id="score"></p>
-            <img src="./assets/edit.svg" alt="edit image" />
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="table-container">
+        <table id="friends-table">
+          <tr>
+            <th>Friend</th>
+            <th>Send message</th>
+          </tr>
+          <tbody id="tbody"> </tbody>
+        </table>
+      </div>
+      <br />
+      <br />
+      <div class="form">
+        <button class="button-class" id="send-button">Send</button>
+        <button class="button-class" id="invite-button">
+          Invite new Friend
+        </button>
+      </div>
+      <br />
+      <br />
+      <div class="modal" id="modal">
+        <div class="modal-elements">
+          <div class="modal-content">
+            <input
+              type="text"
+              name="input"
+              id="toSearch"
+              placeholder="insert username"
+            />
+            <button class="button-class" id="search-button">Search</button>
+          </div>
+          <p id="errorMsg"></p>
+          <div id="usersFound"></div>
+          <div class="form">
+            <button class="button-class" id="add-button">Add</button>
+            <button class="button-class" id="close-button1">Close</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="modal-toChange">
+        <div class="modal-elements">
+          <div class="modal-content">
+            <input
+              type="text"
+              name="input"
+              id="toChange"
+              placeholder=" insert username"
+            />
+          </div>
+          <div class="form">
+            <button class="button-class" id="change-button">Change</button>
+            <button class="button-class" id="close-button2">Close</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="modal-message">
+        <div class="modal-elements">
+          <div class="modal-content">
+            <input
+              type="text"
+              name="input"
+              id="message"
+              placeholder=" your message here"
+            />
+          </div>
+          <div class="form">
+            <button class="button-class" id="send-button2">Send</button>
+            <button class="button-class" id="close-button3">Close</button>
           </div>
         </div>
       </div>
     </main>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <footer>
       <p>@Gametastic</p>
     </footer>
     <script src="./build/logout.js"></script>
     <script src="./build/index.js"></script>
-    <script src="./build/loggedUser.js"></script>
+    <script type="module" src="./build/loggedUser.js"></script>
+    <script type="module" src="./build/profile.js"></script>
   </body>
 </html>
