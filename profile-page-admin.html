@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="./style/logged.css" />
+    <link rel="stylesheet" href="./style/profile.css" />
+    <link rel="shortcut icon" href="./assets/ico.svg" type="image/x-icon" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("k4IZpKwDs120afDhG");
+      })();
+    </script>
+    <title>Gametastic</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="title">
+          <a href="./index-admin.html"
+            ><img id="logoImg" src="./assets/ico.svg" alt="logo image"
+          /></a>
+          <p>GameTastic!</p>
+        </div>
+        <div class="links">
+          <ul>
+            <li><a href="./index-admin.html">Home</a></li>
+            <li><a href="top-player-admin.html">Top Players</a></li>
+            <li id="menu">
+              <a href="">Games</a>
+              <ul class="dropdown">
+                <li><a href="page-not-found-admin.html">Memory</a></li>
+                <li><a href="page-not-found-admin.html">Battleship</a></li>
+                <li><a href="page-not-found-admin.html">Connect 4</a></li>
+                <li><a href="page-not-found-admin.html">Words</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="user-menu">
+          <div class="user-token">
+            <img src="./assets/user.svg" alt="" />
+            <p id="user">Username</p>
+          </div>
+          <div>
+            <ul class="options" id="dropdown-profile">
+              <li><a href="#">Profile</a></li>
+              <li class="div-button"><a id="logout1" href="">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+        <a href="" id="toggle"><img src="./assets/menu.svg" alt="menu" /></a>
+      </nav>
+      <div id="small-menu-container">
+        <div class="small-menu">
+          <li><a href="./index-admin.html">Home</a></li>
+          <li><a href="top-player-admin.html">Top Players</a></li>
+          <li id="menu">
+            <a href="">Games</a>
+            <ul class="dropdown">
+              <li><a href="page-not-found-admin.html">Memory</a></li>
+              <li><a href="page-not-found-admin.html">Battleship</a></li>
+              <li><a href="page-not-found-admin.html">Connect 4</a></li>
+              <li><a href="page-not-found-admin.html">Words</a></li>
+            </ul>
+          </li>
+          <li><a href="">Profile</a></li>
+          <li class="div-button"><a id="logout2" href="">Logout</a></li>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h3>Welcome back!</h3>
+      <h4>your infos:</h4>
+      <div class="user-info">
+        <div class="informations">
+          <p>Username:</p>
+          <p>Email:</p>
+          <p>Password:</p>
+          <p>Subscribed to newsletter:</p>
+          <p>Actual score:</p>
+        </div>
+        <div class="values">
+          <div class="buttons">
+            <p id="username"></p>
+            <img id="changeUsername" src="./assets/edit.svg" alt="edit image" />
+          </div>
+          <div class="buttons">
+            <p id="email"></p>
+          </div>
+          <div class="buttons">
+            <p id="password"></p>
+            <img id="changePassword" src="./assets/edit.svg" alt="edit image" />
+          </div>
+          <div class="buttons">
+            <p id="news"></p>
+            <img id="changeSub" src="./assets/edit.svg" alt="edit image" />
+          </div>
+          <div class="buttons">
+            <p id="score"></p>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="table-container">
+        <table id="friends-table">
+          <tr>
+            <th>Friend</th>
+            <th>Send message</th>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <br />
+      <br />
+      <div class="form">
+        <button class="button-class" id="send-button">Send</button>
+        <button class="button-class" id="invite-button">
+          Invite new Friend
+        </button>
+      </div>
+      <h4>Admin Features:</h4>
+      <div class="admin-features">
+        <div class="send-news">
+          <textarea
+            name="newsletter"
+            id="newsletter"
+            cols="30"
+            rows="5"
+            placeholder="newsletter message"
+          ></textarea>
+          <button class="button-class" id="send-news">Send newsletter</button>
+        </div>
+        <br />
+        <br />
+        <div class="turn-to-admin-container">
+          <div class="turn-to-admin">
+            <input
+              type="text"
+              name="input"
+              id="searchUsername"
+              placeholder="insert username"
+            />
+            <button class="button-class" id="turn-admin-button">
+              Turn to admin
+            </button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="modal" id="modal">
+        <div class="modal-elements">
+          <div class="modal-content">
+            <input
+              type="text"
+              name="input"
+              id="toSearch"
+              placeholder="insert username"
+            />
+            <button class="button-class" id="search-button">Search</button>
+          </div>
+          <p id="errorMsg"></p>
+          <div id="usersFound"></div>
+          <div class="form">
+            <button class="button-class" id="add-button">Add</button>
+            <button class="button-class" id="close-button1">Close</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="modal-toChange">
+        <div class="modal-elements">
+          <div class="modal-content">
+            <input
+              type="text"
+              name="input"
+              id="toChange"
+              placeholder=" insert username"
+            />
+          </div>
+          <div class="form">
+            <button class="button-class" id="change-button">Change</button>
+            <button class="button-class" id="close-button2">Close</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="modal-message">
+        <div class="modal-elements">
+          <div class="modal-content">
+            <input
+              type="text"
+              name="input"
+              id="message"
+              placeholder=" your message here"
+            />
+          </div>
+          <div class="form">
+            <button class="button-class" id="send-button2">Send</button>
+            <button class="button-class" id="close-button3">Close</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <footer>
+      <p>@Gametastic</p>
+    </footer>
+    <script src="./build/logout.js"></script>
+    <script src="./build/index.js"></script>
+    <script type="module" src="./build/loggedUser.js"></script>
+    <script type="module" src="./build/profile.js"></script>
+    <script type="module" src="./build/admin-profile.js"></script>
+  </body>
+</html>

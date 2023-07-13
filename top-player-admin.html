@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="./style/topPlayer.css">
+    <link rel="stylesheet" href="./style/logged.css">
+    <link rel="shortcut icon" href="./assets/ico.svg" type="image/x-icon" />
+    <title>Gametastic</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="title">
+          <a href="index-admin.html"
+            ><img id="logoImg" src="./assets/ico.svg" alt="logo image"
+          /></a>
+          <p>GameTastic!</p>
+        </div>
+        <div class="links">
+          <ul>
+            <li><a href="index-admin.html">Home</a></li>
+            <li><a href="#">Top Players</a></li>
+            <li id="menu">
+              <a href="">Games</a>
+              <ul class="dropdown">
+                <li><a href="page-not-found-admin.html">Memory</a></li>
+                <li><a href="page-not-found-admin.html">Battleship</a></li>
+                <li><a href="page-not-found-admin.html">Connect 4</a></li>
+                <li><a href="page-not-found-admin.html">Words</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="user-menu">
+          <div class="user-token">
+            <img src="./assets/user.svg" alt="" />
+            <p id="user">Username</p>
+          </div>
+          <div>
+            <ul class="options" id="dropdown-profile">
+              <li><a href="./profile-page-admin.html">Profile</a></li>
+              <li class="div-button"><a id="logout1" href="">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+        <a href="" id="toggle"><img src="./assets/menu.svg" alt="menu" /></a>
+      </nav>
+      <div id="small-menu-container">
+        <div class="small-menu">
+          <li><a href="index-admin.html">Home</a></li>
+          <li><a href="#">Top Players</a></li>
+          <li id="menu">
+            <a href="">Games</a>
+            <ul class="dropdown">
+              <li><a href="page-not-found-admin.html">Memory</a></li>
+              <li><a href="page-not-found-admin.html">Battleship</a></li>
+              <li><a href="page-not-found-admin.html">Connect 4</a></li>
+              <li><a href="page-not-found-admin-.html">Words</a></li>
+            </ul>
+          </li>
+          <li><a href="./profile-page-admin.html">Profile</a></li>
+          <li class="div-button"><a id="logout2" href="">Logout</a></li>
+        </div>
+      </div>
+    </header>
+    <main>
+        <div class="cards-container">
+            <div class="card" id="second-player">
+                <div class="img-container"><img src="./assets/trophy.svg" alt=""></div>
+                <h3>#2</h4>
+                <p>Second Player</p>
+            </div>
+            <div class="card" id="first-player">
+                <div class="img-container"><img src="./assets/trophy.svg" alt=""></div>
+                <h3>#1</h4>
+                <p>First Player</p>
+            </div>
+            <div class="card" id="third-player">
+                <div class="img-container"><img src="./assets/trophy.svg" alt=""></div>
+                <h3>#3</h4>
+                <p>Third Player</p>
+            </div>
+        </div>
+        <br>
+        <h3 class="title-table">Results:</h3>
+        <div class="table-container">
+        <table>
+            <tr>
+                <th>Position</th>
+                <th>Player</th>
+                <th>Score</th>            
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Player1</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Player2</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Player3</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Player4</td>
+                <td>30</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    </main>
+    <footer>
+      <p>@Gametastic</p>
+    </footer>
+    <script src="./build/logout.js"></script>
+    <script src="./build/index.js"></script>
+    <script type="module" src="./build/loggedUser.js"></script>
+  </body>
+</html>

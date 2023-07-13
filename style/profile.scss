@@ -18,7 +18,8 @@ h4 {
   }
 }
 
-.informations, .values {
+.informations,
+.values {
   background-color: rgba(240, 255, 255, 0.349);
   border-radius: 1rem;
 }
@@ -84,6 +85,14 @@ table {
   }
 }
 
+.send-news {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -119,6 +128,38 @@ table {
         &:hover {
           scale: 1;
         }
+      }
+    }
+  }
+}
+
+.admin-features {
+  padding: 2rem;
+  margin: 0 5rem;
+  background-color: rgba(240, 255, 255, 0.349);
+  border-radius: 10%;
+}
+
+.turn-to-admin-container {
+  display: flex;
+  justify-content: center;
+  .turn-to-admin {
+    display: inline-flex;
+    width: fit-content;
+    border: solid $secondary-color 0.1rem;
+    border-radius: 2%;
+    input {
+      padding: 0;
+      border: none;
+      height: 2rem;
+      width: 15rem;
+    }
+    button {
+      padding: 0;
+      border: none;
+      border-radius: 0%;
+      &:hover {
+        scale: 1;
       }
     }
   }
