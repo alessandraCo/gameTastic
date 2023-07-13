@@ -16,6 +16,11 @@ h4 {
   padding: 0.3rem;
 }
 
+.informations, .values {
+  background-color: rgba(240, 255, 255, 0.349);
+  border-radius: 1rem;
+}
+
 .buttons {
   display: flex;
   flex-direction: row;

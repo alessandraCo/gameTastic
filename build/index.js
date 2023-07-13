@@ -36,13 +36,17 @@ showSlides();
 function showSlides() {
     let i;
     let slides = document.getElementsByClassName("carousel");
-    for (i=0; i<slides.length; i++) {
-        slides[i].style.display = "none";
+    if(slides !== null && slides !== undefined) {
+        for (i=0; i<slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if(slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        if(slides[slideIndex-1] !== undefined) {
+            slides[slideIndex-1].style.display = "block";
+        }
+        setTimeout(showSlides, 2000);   //change image every 2 seconds
     }
-    slideIndex++;
-    if(slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 2000);   //change image every 2 seconds
 }

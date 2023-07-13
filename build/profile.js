@@ -277,7 +277,7 @@ function sendMessage(friendSelected) {
                         toFriend.id = getId
                         toFriend.username = getUser;
                         toFriend.email = getEmail;
-                        sendMail(LOGGED.username, toFriend.username, LOGGED.email, message);
+                        sendMail(LOGGED.username, toFriend.username, LOGGED.email, toFriend.email, message);
                         //reset values:
                         //reset checkboxes
                         const checkboxes = document.getElementsByClassName("checkbox");
