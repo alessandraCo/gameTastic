@@ -1,0 +1,108 @@
+{
+  "users": [
+    {
+      "username": "user1",
+      "email": "user1@mail.com",
+      "password": "user1pass",
+      "subscription": true,
+      "isAdmin": true,
+      "friends": [
+        "user2",
+        "ilcapo"
+      ],
+      "score": 0,
+      "id": 1
+    },
+    {
+      "username": "user2",
+      "email": "user2@mail.com",
+      "password": "user2pass",
+      "subscription": false,
+      "isAdmin": false,
+      "friends": [
+        "italo",
+        "user1",
+        "pierpaolopasolini"
+      ],
+      "score": 0,
+      "id": 2
+    },
+    {
+      "username": "pierpaolopasolini",
+      "email": "pierpaolo@mail.com",
+      "password": "pierpass",
+      "subscription": true,
+      "isAdmin": false,
+      "friends": [],
+      "score": 0,
+      "id": 3
+    },
+    {
+      "username": "mario",
+      "email": "mario@mail.com",
+      "password": "mariopass",
+      "subscription": false,
+      "isAdmin": false,
+      "friends": [
+        "user1",
+        "user2",
+        "pierpaolopasolini",
+        "italo"
+      ],
+      "score": 0,
+      "id": 4
+    },
+    {
+      "username": "italo",
+      "email": "italo@mail.com",
+      "password": "italopass",
+      "subscription": false,
+      "isAdmin": false,
+      "friends": [
+        "user1",
+        "pierpaolopasolini"
+      ],
+      "score": 0,
+      "id": 5
+    },
+    {
+      "username": "ilcapo",
+      "email": "ilcapo@mail.com",
+      "password": "ilcapopass",
+      "subscription": false,
+      "isAdmin": true,
+      "friends": [
+        "user2",
+        "user1"
+      ],
+      "score": 0,
+      "id": 6
+    },
+    {
+      "username": "ale",
+      "email": "ale@mail.com",
+      "password": "alepass",
+      "subscription": true,
+      "isAdmin": false,
+      "friends": [
+        "user1",
+        "italo"
+      ],
+      "score": 0,
+      "id": 7
+    },
+    {
+      "username": "user3",
+      "email": "user3@mail.com",
+      "password": "mysecretpass",
+      "subscription": true,
+      "isAdmin": false,
+      "friends": [
+        "user1",
+        "user2"
+      ],
+      "score": 0,
+      "id": 8
+    }
+  ]
+}
