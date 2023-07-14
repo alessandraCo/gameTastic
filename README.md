@@ -22,10 +22,10 @@
 * The features of sending messages to friends and sending newsletter to all users subscribed were implemented using Ethereal and EmailJS.
 
 * *Ethereal* is a fake SMTP service, completely free anti-transactional email service where messages never get delivered
-* [Ethereal] (https://ethereal.email/)
+* [Ethereal](https://ethereal.email/)
 
 * *EmailJS* helps to send emails using client-side technologies only. No server is required: it is possible just to connect EmailJS to one of the supported email services (in this case Ethereal account) and create an email template.
-* [EmailJS] (https://www.emailjs.com/)
+* [EmailJS](https://www.emailjs.com/)
 ---
 ## **Admin Demo**
 ![](https://github.com/alessandraCo/gameTastic/blob/main/admin%20demo.gif)
