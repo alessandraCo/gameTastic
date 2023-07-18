@@ -28,7 +28,9 @@ sendNewsButton.addEventListener("click", (e) => {
                     let userSubbed = new User();
                     userSubbed.username = getUser;
                     userSubbed.email = getEmail;
-                    sendMail(LOGGED.username, userSubbed.username, LOGGED.email, userSubbed.email, newsletterText.value);
+                    if(userSubbed.username !== LOGGED.username) {
+                        sendMail(LOGGED.username, userSubbed.username, LOGGED.email, userSubbed.email, newsletterText.value);
+                    }
                 }
                 //reset values:
                 newsletterText.value = "";
